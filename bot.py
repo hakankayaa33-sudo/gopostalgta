@@ -14,7 +14,9 @@ def home():
     return "GoPostal Bot Aktif ve Calisiyor!"
 
 def run_server():
-    app.run(host='0.0.0.0', port=8080)
+    import os
+    port = int(os.environ.get('PORT', 8080))
+    app.run(host='0.0.0.0', port=port)
 
 Thread(target=run_server).start()
 
@@ -1700,3 +1702,8 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
+
+if not TOKEN:
+    raise RuntimeError("DISCORD_TOKEN ortam değişkeni tanımlı değil.")
+
+bot.run(TOKEN)
