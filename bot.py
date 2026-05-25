@@ -1696,6 +1696,8 @@ async def sonlandır(ctx):
     
     await ctx.channel.edit(category=arsiv_kat, overwrites=yeni_overwrites)
     await ctx.send(f"📦 **Bu kargo talebi {ctx.author.mention} tarafından sonlandırılmış ve arşive kaldırılmıştır.**")
+import os
+from dotenv import load_dotenv
 
-# Buraya kendi bot token'ını yazmalısın
-bot.run('MTUwODI4MjIzNDI2MjY1NTE2Nw.GE36yR.DyAn3kO0fcZ7nJKos7ps2H1VCsZj0qh6f9dWa8')
+load_dotenv()
+TOKEN = os.getenv('DISCORD_TOKEN')
