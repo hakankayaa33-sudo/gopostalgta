@@ -1698,6 +1698,5 @@ async def sonlandır(ctx):
     await ctx.send(f"📦 **Bu kargo talebi {ctx.author.mention} tarafından sonlandırılmış ve arşive kaldırılmıştır.**")
 import os
 from dotenv import load_dotenv
-
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
